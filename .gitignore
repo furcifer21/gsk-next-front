@@ -1,0 +1,13 @@
+/.idea
+/.env
+/.env.backup
+/.env.local
+/node_modules
+
+/public/js/*
+/public/css/*
+/public/fonts/vendor/*
+/public/images/vendor/*
+
+/.next/*
+/out/*
