@@ -1,5 +1,5 @@
 
-# gsk-backend
+# gsk-next-front
 
 ## Stack:
 * NEXTjs
