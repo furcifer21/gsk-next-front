@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Header from "./partials/Header";
-import Footer from "./partials/Footer";
+import OnClickModal from "./partials/OnClickModal";
 
 export default function MainLayout({children, seo}) {
     return (
@@ -14,12 +14,12 @@ export default function MainLayout({children, seo}) {
                 <title>{seo.title || 'GSK'}</title>
                 <meta name="description" content={seo.description || 'GSK | description '} />
             </Head>
-            <div className="d-flex flex-column vh-100 position-relative">
+            <div className="App">
                 <Header />
                 <main className="flex-grow-1">
                     {children}
                 </main>
-                <Footer />
+                <OnClickModal/>
             </div>
         </>
     )

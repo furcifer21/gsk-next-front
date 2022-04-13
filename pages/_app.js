@@ -1,19 +1,21 @@
  // File for importing global things
-import "../resources/sass/app.scss";
+import 'bootstrap/dist/css/bootstrap.css';
+import "../resources/css/style.css";
+ import { Provider } from 'react-redux';
+ import store from '../redux/store';
 // We need this check because bootstrap looking for a window that is absent on the server
 if (process.browser) {
     require("jquery");
-    require("popper.js");
+    require("@popperjs/core");
     require("bootstrap");
 }
-import { appWithTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-import { isBot } from "../components/helpers";
 
 const App = ({ Component, pageProps }) => {
     return(
-        <Component {...pageProps} />
+        <Provider store={store}>
+            <Component {...pageProps} />
+        </Provider>
     )
 };
 
-export default appWithTranslation(App);
+export default App;
