@@ -1,7 +1,7 @@
 import axios from "axios";
 import MainLayout from "../../../components/MainLayout";
 import CategoryPageComponent from "../../../components/partials/CategoryPageComponent";
-import {REAL_FAKE_DATA} from "../../../components/constant";
+import {API_URL, REAL_FAKE_DATA} from "../../../components/constant";
 
 export default function SubCategoryPage({categoryData, categoryMenu, subCategoryMenu, productsData, categorySlug, subCategoryName, subCategorySlug}) {
     return (
