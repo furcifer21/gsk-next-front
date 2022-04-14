@@ -82,16 +82,16 @@ export default function CatalogPage({catalogCategories}) {
 }
 
 export const getServerSideProps = async () => {
-    /*let catalogCategories = [];
-*/
-    /*try {
+    let catalogCategories = [];
+
+    try {
         const res = await axios.get(`${API_URL}/product/getAllProduct`);
         catalogCategories = res.data;
     } catch (e) {
         console.log(e)
-    }*/
-
-    let catalogCategories = REAL_FAKE_DATA;
+    }
+/*
+    let catalogCategories = REAL_FAKE_DATA;*/
 
     return {
         props: {
