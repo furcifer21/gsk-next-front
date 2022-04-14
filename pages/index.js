@@ -1,5 +1,5 @@
 import MainLayout from "../components/MainLayout";
-import {Fragment, useEffect, useState} from "react";
+import {Component, Fragment, useEffect, useState} from "react";
 import Link from "next/link";
 import {Map, Placemark, YMaps} from "react-yandex-maps";
 import axios from "axios";
@@ -8,6 +8,7 @@ import InputMask from "react-input-mask";
 import {API_URL, REAL_FAKE_DATA} from "../components/constant";
 import {checkPhone} from "../components/helpers";
 import {useDispatch, useSelector} from "react-redux";
+import ProductCounter from "../components/partials/ProductCounter";
 
 export default function Index({priceData}) {
     const [currentCategory, setCurrentCategory] = useState('');
@@ -207,11 +208,7 @@ export default function Index({priceData}) {
                                                                                     </td>
                                                                                     <td>{product.price} ₽</td>
                                                                                     <td className="no-br">
-                                                                                        <div className="number" data-step="1" data-min="1" data-max="100">
-                                                                                            <a href="#" className="number-minus">−</a>
-                                                                                            <input className="number-text" type="text" name="count" value="0" readOnly/>
-                                                                                            <a href="#" className="number-plus">+</a>
-                                                                                        </div>
+                                                                                        <ProductCounter/>
                                                                                     </td>
                                                                                 </tr>
                                                                             )

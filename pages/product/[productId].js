@@ -154,7 +154,7 @@ export default function ProductPage({productData, categoryMenu}) {
                                     </div>
                                 </div>
                             </div>
-                            {currentId() ?
+                            {currentId() !== -1 ?
                                 <button className="btn org cartblock-btn lgx mt-4" onClick={() => dispatch(addToCart(productData))} data-bs-toggle="modal" data-bs-target="#modal">
                                     Купить в один клик
                                 </button>

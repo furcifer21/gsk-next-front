@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, {useEffect} from "react";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart} from "../../redux/cart";
@@ -10,6 +10,7 @@ export default function ProductItem({item, category}) {
     const currentId = () => {
         return cart.findIndex((product) => product.id === item.id);
     };
+    const [productInCart, seProductInCart] = useState(currentId() !== -1 ? true : false);
 
     return (
         <div className="product_item">
@@ -45,8 +46,11 @@ export default function ProductItem({item, category}) {
                     </div>*/}
                 </div>
                 <div className="prod_row">
-                    {currentId() ?
-                        <button className="btn in_cart" onClick={() => dispatch(addToCart(item))}>
+                    {!productInCart ?
+                        <button className="btn in_cart" onClick={() => {
+                            dispatch(addToCart(item))
+                            seProductInCart(true);
+                        }}>
                             В корзину
                         </button>
                     :
