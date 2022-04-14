@@ -1,4 +1,4 @@
-@import "~bootstrap";
+@import '~bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;800&family=Mulish:wght@600&display=swap');
 
 body {
@@ -111,7 +111,7 @@ li.breadcrumb-item,
 }
 
 section.top {
-    background: url("../../public/images/bg-top.png") no-repeat 50%/cover;
+    background: url("../public/images/bg-top.png") no-repeat 50%/cover;
     padding: 74px 0 336px;
 }
 
@@ -304,7 +304,7 @@ section.catalog-body {
 }
 
 .sidbar-left-item:after {
-    background: url("../../public/images/icon/Polygon-2.svg") no-repeat 50%;
+    background: url("../public/images/icon/Polygon-2.svg") no-repeat 50%;
     content: "";
     display: block;
     position: absolute;
@@ -978,7 +978,7 @@ button.btn.grey:hover {
 
 .rating-mini>span:before {
     content: '';
-    background: url("../../public/images/icon/star-tr.svg") 50%/contain no-repeat;
+    background: url("../public/images/icon/star-tr.svg") 50%/contain no-repeat;
     display: block;
     width: 18px;
     height: 18px;
@@ -987,7 +987,7 @@ button.btn.grey:hover {
 
 .rating-mini>span.active:before {
 
-    background: url("../../public/images/icon/star.svg") 50%/contain no-repeat;
+    background: url("../public/images/icon/star.svg") 50%/contain no-repeat;
 }
 
 
@@ -1047,11 +1047,11 @@ button.btn.in_cart {
 }
 
 .prod_icon.favorite {
-    background: #FFFFFF url("../../public/images/icon/favorite.svg") no-repeat 50%;
+    background: #FFFFFF url("../public/images/icon/favorite.svg") no-repeat 50%;
 }
 
 .prod_icon.info {
-    background: #FFFFFF url("../../public/images/icon/info.svg") no-repeat 50%;
+    background: #FFFFFF url("../public/images/icon/info.svg") no-repeat 50%;
 }
 
 .prod_icon {
@@ -1284,7 +1284,7 @@ p.card-text span {
 
 #about {
     padding: 0;
-    background: #F0F1F3 url("../../public/images/bg-round.png") no-repeat 0%/contain;
+    background: #F0F1F3 url("../public/images/bg-round.png") no-repeat 0%/contain;
     min-height: 503px;
 }
 
@@ -1330,7 +1330,7 @@ p.card-text span {
 }
 
 #poraydok .row-cols-1 {
-    background: url("../../public/images/icon/190.svg") no-repeat;
+    background: url("../public/images/icon/190.svg") no-repeat;
     background-position: 50% 25%;
 }
 
@@ -1374,7 +1374,7 @@ p.card-text span {
     content: "";
     position: absolute;
     display: block;
-    background: url("../../public/images/icon/arrow-rh.svg") 50%/cover;
+    background: url("../public/images/icon/arrow-rh.svg") 50%/cover;
     width: 70px;
     height: 22px;
     top: 10%;
@@ -1582,7 +1582,7 @@ form.search {
 }
 
 button.btn.search.form-btn {
-    background: #FFAD00 url("../../public/images/icon/search.svg") no-repeat 50%;
+    background: #FFAD00 url("../public/images/icon/search.svg") no-repeat 50%;
     border-radius: 0px 7px 7px 0px;
     width: 55px;
     height: 46px;
@@ -1600,7 +1600,7 @@ form.search select {
     max-width: 145px;
     padding: 15px 0 15px 20px;
     color: #000;
-    background: #fff url("../../public/images/icon/select.svg") 85% no-repeat;
+    background: #fff url("../public/images/icon/select.svg") 85% no-repeat;
 }
 
 .pokupatel .zakaz-block-col textarea.w-input {
@@ -1655,7 +1655,7 @@ form.search select {
 .view {
     width: 28px;
     height: 24px;
-    background: url("../../public/images/icon/view.svg") 50% no-repeat;
+    background: url("../public/images/icon/view.svg") 50% no-repeat;
     margin-left: auto;
 }
 
@@ -1711,7 +1711,7 @@ button.btn.cartblock-btn {
 }
 
 .cartblock-btn.trash {
-    background: #E7E7E7 url("../../public/images/icon/trash.svg") 50% no-repeat;
+    background: #E7E7E7 url("../public/images/icon/trash.svg") 50% no-repeat;
     max-width: 43px;
     font-size: 0;
     margin: 4px 0 4px 8px;
@@ -1863,7 +1863,7 @@ li.nav-item {
     width: 41px;
     height: 41px;
     cursor: pointer;
-    background: #C4C4C4 url("../../public/images/icon/arrow-sl.svg") no-repeat 50%;
+    background: #C4C4C4 url("../public/images/icon/arrow-sl.svg") no-repeat 50%;
     border-radius: 5px;
     position: absolute;
     top: 20%;
@@ -1927,7 +1927,7 @@ section#price {
 }
 
 section#kupit {
-    background: url(../../public/images/bg-top2.png) no-repeat 50%/cover;
+    background: url(../public/images/bg-top2.png) no-repeat 50%/cover;
     padding: 180px 0 60px;
     min-height: 500px;
     display: flex;
@@ -1941,7 +1941,7 @@ section#card {
 
 .card {
     border: 0;
-    background: url("../../public/images/polygon-bg.png") no-repeat 50%;
+    background: url("../public/images/polygon-bg.png") no-repeat 50%;
     width: 100%;
     height: 100%;
     background-size: 90%;
@@ -2118,7 +2118,7 @@ button.btn.btn.lgx {
 
 .banner {
     padding: 48px;
-    background: #FFAD00 url("../../public/images/bg-black.png") no-repeat 100%/contain;
+    background: #FFAD00 url("../public/images/bg-black.png") no-repeat 100%/contain;
 }
 
 .banner button {
@@ -2140,7 +2140,7 @@ button.btn.btn.lgx {
     content: "";
     display: block;
     position: absolute;
-    background: url("../../public/images/arrow.svg") 50%/cover;
+    background: url("../public/images/arrow.svg") 50%/cover;
     width: 258px;
     height: 141px;
     top: 15%;
@@ -2429,7 +2429,7 @@ footer .cont-f img {
     position: absolute;
     top: 27px;
     right: 27px;
-    background: url("../../public/images/icon/close.svg") 50%/cover;
+    background: url("../public/images/icon/close.svg") 50%/cover;
     padding: 0;
     width: 37px;
     height: 37px;
@@ -2814,7 +2814,7 @@ input[type="radio"]:checked+label:after {
     }
 
     .banner {
-        background: #FFAD00 url("../../public/images/bg-black-m.png") no-repeat 100%/contain;
+        background: #FFAD00 url("../public/images/bg-black-m.png") no-repeat 100%/contain;
     }
 
     .bannerbody-calk:after {
@@ -2964,7 +2964,7 @@ input[type="radio"]:checked+label:after {
     }
 
     #uslugi {
-        background: linear-gradient(90deg, rgba(3, 10, 98, 0.6) 5.46%, rgba(70, 94, 187, 0.6) 24.37%, rgba(122, 129, 218, 0.6) 51.02%, rgba(3, 10, 98, 0.6) 92.53%), url(../../public/images/bg-usl-m.png) 50%/cover;
+        background: linear-gradient(90deg, rgba(3, 10, 98, 0.6) 5.46%, rgba(70, 94, 187, 0.6) 24.37%, rgba(122, 129, 218, 0.6) 51.02%, rgba(3, 10, 98, 0.6) 92.53%), url(../public/images/bg-usl-m.png) 50%/cover;
         padding: 20px 0 40px;
     }
 
@@ -3497,7 +3497,7 @@ input[type="radio"]:checked+label:after {
         border-radius: 16px !important;
         padding: 30px;
         min-height: 276px;
-        background: #FFAD00 url("../../public/images/bg-black-m.png") no-repeat;
+        background: #FFAD00 url("../public/images/bg-black-m.png") no-repeat;
         background-size: contain;
         background-position: 100% 20px;
     }
@@ -3741,7 +3741,7 @@ input[type="radio"]:checked+label:after {
 
     section#kupit {
         padding-top: 123px;
-        background: url(../../public/images/bg-top2-m.png) no-repeat 50%/cover;
+        background: url(../public/images/bg-top2-m.png) no-repeat 50%/cover;
         padding-left: 12px;
         padding-right: 12px;
     }
@@ -3757,7 +3757,7 @@ input[type="radio"]:checked+label:after {
         min-height: 657px;
         padding-top: 153px;
         background-size: cover;
-        background: url(../../public/images/bg-top.png) no-repeat 50%/cover;
+        background: url(../public/images/bg-top.png) no-repeat 50%/cover;
     }
 
     section.top button {
@@ -4139,7 +4139,7 @@ input[type="radio"]:checked+label:after {
 
         width: 63px;
         height: 63px;
-        background: #C4C4C4 url(../../public/images/builder-m.png) no-repeat 50%/cover;
+        background: #C4C4C4 url(../public/images/builder-m.png) no-repeat 50%/cover;
         content: "";
         display: inline-block;
         position: absolute;
@@ -4164,7 +4164,7 @@ input[type="radio"]:checked+label:after {
         border-radius: 16px !important;
         padding: 30px;
         min-height: 276px;
-        background: #FFAD00 url(../../public/images/bg-black-m.png) no-repeat;
+        background: #FFAD00 url(../public/images/bg-black-m.png) no-repeat;
         background-size: contain;
         background-position: 129% 20px;
     }
@@ -4183,7 +4183,7 @@ input[type="radio"]:checked+label:after {
         min-height: 657px;
         padding-top: 153px;
         background-size: cover;
-        background: url("../../public/images/bg-top-m.png") no-repeat 50%/cover;
+        background: url("../public/images/bg-top-m.png") no-repeat 50%/cover;
     }
 
     section#card {
