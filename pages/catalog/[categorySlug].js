@@ -23,7 +23,7 @@ export const getServerSideProps = async ({ query }) => {
     let productsData = [];
     let categorySlug = query.categorySlug;
 
-    /*try {
+    try {
         const res = await axios.get(`${API_URL}/product/getAllProducts`);
         const response = res.data;
 
@@ -37,16 +37,16 @@ export const getServerSideProps = async ({ query }) => {
         });
     } catch (e) {
         console.log(e)
-    }*/
+    }
 
-    categoryMenu = REAL_FAKE_DATA;
+    /*categoryMenu = REAL_FAKE_DATA;
     REAL_FAKE_DATA.map(category => {
         if(category.typeSlug === categorySlug) {
             categoryData = category;
             subCategoryMenu = category.categories;
             productsData = category.products;
         }
-    });
+    });*/
 
     return {
         props: {

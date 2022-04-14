@@ -174,7 +174,6 @@ export const getServerSideProps = async ({ query }) => {
     let productData = [];
     let categoryMenu = [];
     const productId = decodeURI(query.productId.split('-')[1]);
-    console.log(333,productId)
     const fakeProductData = [
         {
             "id": 3,
@@ -194,7 +193,7 @@ export const getServerSideProps = async ({ query }) => {
         }
     ]
 
-    /*try {
+    try {
         const res = await axios.get(`${API_URL}/product/getAllProducts`);
         categoryMenu = res.data;
     } catch (e) {
@@ -206,10 +205,10 @@ export const getServerSideProps = async ({ query }) => {
         productData = res.data[0];
     } catch (e) {
         console.log(e)
-    }*/
+    }
 
-    productData = fakeProductData[0];
-    categoryMenu = REAL_FAKE_DATA;
+    /*productData = fakeProductData[0];
+    categoryMenu = REAL_FAKE_DATA;*/
 
     return {
         props: {
