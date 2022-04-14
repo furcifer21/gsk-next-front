@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem";
 
 export default function CategoryPageComponent({categoryData, categoryMenu, subCategoryMenu, productsData, subCategoryName, categorySlug, subCategorySlug}) {
      return (
-        categoryData !== '' &&
+        categoryData !== undefined &&
         <>
             <section>
                 <div className="container breadcrumb">
