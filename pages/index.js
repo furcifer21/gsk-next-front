@@ -491,16 +491,16 @@ export default function Index({priceData}) {
 };
 
 export const getServerSideProps = async () => {
-    /*let priceData = [];
+    let priceData = [];
 
     try {
         const res = await axios.get(`${API_URL}/product/getAllProducts`);
         priceData = res.data;
     } catch (e) {
         console.log(e)
-    }*/
+    }
 
-    let priceData = REAL_FAKE_DATA;
+    /*let priceData = REAL_FAKE_DATA;*/
 
     return {
         props: {
