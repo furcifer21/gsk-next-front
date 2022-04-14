@@ -4,22 +4,22 @@ import MainLayout from "../components/MainLayout";
 export default function AllArticlesPage() {
     const articlesInfo = [
         {
-            img: '/images/articles/atc1.png',
+            img: '/images/articles/armarura-main.jpg',
             name: 'Арматура 25г2с и А500: различие',
             slug: 'razlichia-armaturi',
         },
         {
-            img: '/images/articles/atc1.png',
+            img: '/images/articles/beton-main.jpg',
             name: 'Марки бетона',
             slug: 'marki-betona',
         },
         {
-            img: '/images/articles/atc1.png',
+            img: '/images/articles/pesik-main.jpg',
             name: 'Значение строительного песка',
             slug: 'znachenia-peska',
         },
         {
-            img: '/images/articles/atc1.png',
+            img: '/images/articles/beton2-main.jpg',
             name: 'Как проверить прочность бетона?',
             slug: 'prochnost-betona',
         }

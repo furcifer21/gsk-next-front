@@ -8,7 +8,7 @@ export default function CategoryMenu({categories, pageSlug}) {
             <div>
                 {categories.map((category, index) => {
                     return (
-                        <div key={`category-item-${index}`} className={`sidbar-left-item br w-100 position-relative ${pageSlug === category.typeSlug ? 'active' : ''}`}>
+                        <div key={`category-item-${index}`} className={`sidbar-left-item br w-100 position-relative text-lowercase ${pageSlug === category.typeSlug ? 'active' : ''}`}>
                             <Link href={`/catalog/${category.typeSlug}`}><a className="fake-link-block"></a></Link>
                             {category.type}
                         </div>

@@ -79,7 +79,7 @@ export default function Index({priceData}) {
             </section>
             <section id="card">
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 ">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 flex-row-reverse">
                         <div className="col p-0">
                             <div className="card">
                                 <div className="card-body flex-column d-flex justify-content-center align-items-center">
@@ -260,12 +260,12 @@ export default function Index({priceData}) {
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#modal">Оформить в один клик
                                                                     </button>
-                                                                    {/*<button className="btn grey cartblock-btn position-relative">
+                                                                    <button className="btn grey cartblock-btn position-relative">
                                                                         <Link href="/calculate">
                                                                             <a className="fake-link-block"></a>
                                                                         </Link>
                                                                         Рассчитать доставку
-                                                                    </button>*/}
+                                                                    </button>
                                                                 </div>
                                                             </div>
 
@@ -281,18 +281,18 @@ export default function Index({priceData}) {
                     </div>
                 </section>
             }
-            {/*<section id="calk-banner" className="bg-wh">
+            <section id="calk-banner" className="bg-wh">
                 <div className="container">
                     <div className="banner org br">
                         <div className="bannerbody-calk">
                             <div>Рассчёт цены бетона с доставкой на карте</div>
                             <Link href="/calculate">
-                                <button className="btn wh">Калькулятор доставки</button>
+                                <a><button className="btn wh">Калькулятор доставки</button></a>
                             </Link>
                         </div>
                     </div>
                 </div>
-            </section>*/}
+            </section>
             {/*<section id="raboti" className="bg-wh">
                 <div className="container">
                     <h2>Работы, выполненные ГСК</h2>

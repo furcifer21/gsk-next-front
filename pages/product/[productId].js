@@ -84,16 +84,18 @@ export default function ProductPage({productData, categoryMenu}) {
                                             <span></span>
                                         </div>*/}
                                 </div>
-                                {/*<div className="prod_row">
-                                        <div className="number" data-step="1" data-min="1" data-max="100">
-                                            <a href="#" className="number-minus">−</a>
-                                            <input className="number-text" type="text" name="count" value="0" />
-                                            <a href="#" className="number-plus">+</a>
-                                        </div>
-                                        <button className="btn in_cart">
+                                <div className="prod_row">
+                                    {currentId() ?
+                                        <button className="btn in_cart" onClick={() => dispatch(addToCart(productData))}>
                                             В корзину
                                         </button>
-                                    </div>*/}
+                                        :
+                                        <button className="btn org cartblock-btn lgx mt-4 position-relative">
+                                            <Link href="/checkout"><a className="fake-link-block"></a></Link>
+                                            Товар в корзине
+                                        </button>
+                                    }
+                                </div>
                             </div>
                             <div className="row prod_description">
                                 <div>
@@ -153,13 +155,12 @@ export default function ProductPage({productData, categoryMenu}) {
                                 </div>
                             </div>
                             {currentId() ?
-                                <button className="btn org cartblock-btn lgx mt-4" onClick={() => dispatch(addToCart(productData))}>
-                                    Купить
+                                <button className="btn org cartblock-btn lgx mt-4" onClick={() => dispatch(addToCart(productData))} data-bs-toggle="modal" data-bs-target="#modal">
+                                    Купить в один клик
                                 </button>
                                 :
-                                <button className="btn org cartblock-btn lgx mt-4 position-relative">
-                                    <Link href="/cart"><a className="fake-link-block"></a></Link>
-                                    Товар в корзине
+                                <button className="btn org cartblock-btn lgx mt-4 position-relative" data-bs-toggle="modal" data-bs-target="#modal">
+                                    Купить в один клик
                                 </button>
                             }
                         </div>
@@ -193,7 +194,7 @@ export const getServerSideProps = async ({ query }) => {
         }
     ]
 
-    /*try {
+    try {
         const res = await axios.get(`${API_URL}/product/getAllProducts`);
         categoryMenu = res.data;
     } catch (e) {
@@ -205,10 +206,10 @@ export const getServerSideProps = async ({ query }) => {
         productData = res.data[0];
     } catch (e) {
         console.log(e)
-    }*/
+    }
 
-    productData = fakeProductData[0];
-    categoryMenu = REAL_FAKE_DATA;
+    /*productData = fakeProductData[0];
+    categoryMenu = REAL_FAKE_DATA;*/
 
     return {
         props: {
