@@ -56,7 +56,7 @@ export default function CatalogPage({catalogCategories}) {
                                                 <img src={category.img} className=""/>
                                             </div>
                                             <div>
-                                                <div className="article_item-row-name">{category.type}</div>
+                                                <div className="article_item-row-name text-lowercase">{category.type}</div>
                                                 <div className="article_item-row-sub">товаров: {category.products.length}</div>
                                             </div>
                                             <div className="view"></div>
@@ -85,7 +85,7 @@ export const getServerSideProps = async () => {
     let catalogCategories = [];
 
     try {
-        const res = await axios.get(`${API_URL}/product/getAllProducts`);
+        const res = await axios.get(`${API_URL}/product/getAllProduct`);
         catalogCategories = res.data;
     } catch (e) {
         console.log(e)

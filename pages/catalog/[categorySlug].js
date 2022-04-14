@@ -24,7 +24,7 @@ export const getServerSideProps = async ({ query }) => {
     let categorySlug = query.categorySlug;
 
     try {
-        const res = await axios.get(`${API_URL}/product/getAllProducts`);
+        const res = await axios.get(`${API_URL}/product/getAllProduct`);
         const response = res.data;
 
         categoryMenu = response;

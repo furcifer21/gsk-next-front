@@ -156,13 +156,13 @@ export default function Index({priceData}) {
                         <div className="row tabel-block">
                             <div className="col-tab price">
                                 <div className="price-tabel-block">
-                                    <ul className="nav nav-tabs" id="myTab" role="tablist">
+                                    <ul className="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                                         {priceData.map((category, index) => {
                                             currentCategory === '' && setCurrentCategory(category.typeSlug);
 
                                             return (
-                                                <li key={`category-${index}`} className="nav-item" role="presentation">
-                                                    <button className={`nav-link ${currentCategory === category.typeSlug ? 'active' : ''} br`} id={`tab${index}-tab`} data-toggle="tab"
+                                                <li key={`category-${index}`} className="nav-item me-2" role="presentation">
+                                                    <button className={`nav-link text-lowercase ${currentCategory === category.typeSlug ? 'active' : ''} br`} id={`tab${index}-tab`} data-toggle="tab"
                                                             data-target={`#tab${index}`} type="button" role="tab" aria-controls={`tab${index}`}
                                                             aria-selected="true"
                                                             onClick={() => setCurrentCategory(category.typeSlug)}
@@ -186,7 +186,7 @@ export default function Index({priceData}) {
                                                         categoryTab.categories.map((subCategory, y) => {
                                                             return (
                                                                 <Fragment key={`subCategory-${index}-${y}`}>
-                                                                    <div className="price-top br">{subCategory.category}</div>
+                                                                    <div className="price-top br text-uppercase">{subCategory.category}</div>
                                                                     <table className={`table ${categoryTab.categories.length > 1 ? 'table-lg' : ''}`}>
                                                                         <thead className="br">
                                                                         <tr>
@@ -494,7 +494,7 @@ export const getServerSideProps = async () => {
     let priceData = [];
 
     try {
-        const res = await axios.get(`${API_URL}/product/getAllProducts`);
+        const res = await axios.get(`${API_URL}/product/getAllProduct`);
         priceData = res.data;
     } catch (e) {
         console.log(e)
