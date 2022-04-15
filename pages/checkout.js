@@ -42,7 +42,12 @@ export default function CheckoutPage() {
             typeClient: typeClient.trim(),
             typePayment: typePayment.trim(),
             distance: distance,
-            calculationCost: cart,
+            calculationCost: cart.map((item) => {
+                return {
+                    id: item.id,
+                    amount: item.quantity
+                }
+            }),
         }
 
         axios.post(`${API_URL}/email-sender/sendFullOrder`, formData)
