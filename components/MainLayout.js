@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Header from "./partials/Header";
 import OnClickModal from "./partials/OnClickModal";
+import {SuccessModal} from "./partials/SuccessModal";
 
 export default function MainLayout({children, seo}) {
     return (
@@ -20,6 +21,7 @@ export default function MainLayout({children, seo}) {
                     {children}
                 </main>
                 <OnClickModal/>
+                <SuccessModal/>
             </div>
         </>
     )

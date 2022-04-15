@@ -7,6 +7,7 @@ import axios from "axios";
 import {API_URL} from "../components/constant";
 import InputMask from "react-input-mask";
 import {removeAllFromCart} from "../redux/cart";
+import $ from "jquery";
 
 export default function CheckoutPage() {
     const [name, setName] = useState('');
@@ -46,7 +47,7 @@ export default function CheckoutPage() {
 
         axios.post(`${API_URL}/email-sender/sendOrderFull`, formData)
             .then(res => {
-                $('#success-modal').modal('show');
+                $('#success-modal').addClass('open-modal');
                 dispatch(removeAllFromCart());
             })
             .catch(error => {
@@ -61,9 +62,9 @@ export default function CheckoutPage() {
                     <div className="row">
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
-                                <li className="breadcrumb-item">
+                                {/*<li className="breadcrumb-item">
                                     <Link href="/checkout"><a>Оформление заказа</a></Link>
-                                </li>
+                                </li>*/}
                             </ol>
                         </nav>
                     </div>
@@ -124,48 +125,6 @@ export default function CheckoutPage() {
                                                     Оплата производится наличными деньгами или банковской картой, в момент получения заказа. Подтверждением вашей оплаты является фискальный кассовый чек, вручаемый во время получения и оплаты заказа.
                                                 </span>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row-form">
-                                    <div className="zakaz-block br">
-                                        <div className="zakaz-block-row">
-                                            <div className="zakaz-block-col"><span
-                                                className="label-zakaz">Рассчёт доставки</span>
-                                                <div className="col-form">
-                                                    <span className="label-zakaz">Адрес доставки:</span>
-                                                    <input className="text-field w-input br"
-                                                           name="address"
-                                                           maxLength="256"
-                                                           type="text"
-                                                           value={address}
-                                                           onChange={(e) => setAddress(e.target.value)}
-                                                    />
-                                                </div>
-                                                <div className="col-form">
-                                                    <span className="label-zakaz">Расстояние (км):</span>
-                                                    <input className="text-field w-input br"
-                                                           name="rasst"
-                                                           maxLength="256"
-                                                           placeholder="Введите расстояние"
-                                                           type="text"
-                                                           value={distance}
-                                                           onChange={(e) => setDistance(e.target.value)}
-                                                    />
-                                                </div>
-                                                <div className="col-form itog-dostavka">
-                                                <span className="label-zakaz ">
-                                                    <b>Стоимость доставки:</b>
-                                                    <span>4 000 ₽</span>
-                                                </span>
-                                                </div>
-                                            </div>
-                                            <div className="map zakaz">
-                                                <YMaps>
-                                                    <Map defaultState={{ center: [55.74729850208165, 37.53905755617727], zoom: 9 }} width="100%" height="355">
-                                                        <Placemark geometry={[55.74729850208165, 37.53905755617727]} />
-                                                    </Map>
-                                                </YMaps></div>
                                         </div>
                                     </div>
                                 </div>

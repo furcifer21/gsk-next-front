@@ -1,7 +1,4 @@
 export const API_URL = '';
-export const PHONE = '+7 (499) 647-77-56';
-export const PHONE_HREF = '+74996477756';
-export const EMAIL = 'info@glavsk.ru';
 export const REAL_FAKE_DATA = [
     {
         "type": "Товарный бетон",

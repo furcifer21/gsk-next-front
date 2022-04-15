@@ -5,6 +5,7 @@ import {API_URL} from "../../components/constant";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {articles} from "../../components/partials/articlesHTMLText";
+import $ from "jquery";
 
 export default function ArticlePage() {
     const router = useRouter();
@@ -24,7 +25,7 @@ export default function ArticlePage() {
         if(agreeCheckbox && (emailInput.trim() !== '')) {
             axios.post(`${API_URL}/sendQuestion`, formData)
                 .then(res => {
-                    $('#success-modal').modal('show');
+                    $('#success-modal').addClass('open-modal');
                 })
                 .catch(error => {
                     console.log(error);

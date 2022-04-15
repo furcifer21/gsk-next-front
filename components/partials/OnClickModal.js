@@ -23,8 +23,7 @@ export default function OnClickModal() {
         if(agreeCheckbox && (emailVal !== '')) {
             axios.post(`${API_URL}/email-sender/sendBasketOrder`, formData)
                 .then(res => {
-                    $('#modal').modal('hide');
-                    $('#success-modal').modal('show');
+                    $('#success-modal').addClass('open-modal');
                 })
                 .catch(error => {
                     console.log(error);

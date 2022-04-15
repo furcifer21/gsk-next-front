@@ -11,13 +11,10 @@ const cart = createSlice({
       } else {
         state.push({ ...action.payload, quantity: 1 });
       }
-      console.log('add',state,action)
-
     },
     incrementQuantity: (state, action) => {
       const item = state.find((item) => item.id === action.payload);
       item.quantity++;
-      console.log('inc',state,action)
     },
     decrementQuantity: (state, action) => {
       const item = state.find((item) => item.id === action.payload);
@@ -27,7 +24,6 @@ const cart = createSlice({
       } else {
         item.quantity--;
       }
-      console.log('dec',state,action)
     },
     removeFromCart: (state, action) => {
       const index = state.findIndex((item) => item.id === action.payload);
@@ -43,7 +39,7 @@ const cart = createSlice({
 export const localStorageMiddleware = ({ getState }) => {
   return next => action => {
     const result = next(action);
-    localStorage.setItem('gskCart', JSON.stringify(getState().cart));
+    localStorage.setItem('gskCart', JSON.stringify(getState()));
     return result;
   };
 };

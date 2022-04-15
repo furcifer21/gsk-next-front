@@ -14,9 +14,9 @@ export default function CatalogPage({catalogCategories}) {
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
                                         <li className="breadcrumb-item">
-                                            <Link href="/catalog">
+                                           {/* <Link href="/catalog">
                                                 <a>Каталог</a>
-                                            </Link>
+                                            </Link>*/}
                                         </li>
                                     </ol>
                                 </nav>

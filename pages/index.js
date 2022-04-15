@@ -50,7 +50,7 @@ export default function Index({priceData}) {
         if(checkPhone(phoneVal) || (phoneVal !== '')) {
             axios.post(`${API_URL}/email-sender/sendOrder`, formData)
                 .then(res => {
-                    $('#success-modal').modal('show');
+                    $('#success-modal').addClass('open-modal');
                 })
                 .catch(error => {
                     console.log(error);
@@ -78,8 +78,8 @@ export default function Index({priceData}) {
                     </div>
                 </div>
             </section>
-            <section id="card">
-                <div className="container">
+            <section className="relative">
+                <div className="container card-section">
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 flex-row-reverse">
                         <div className="col p-0">
                             <div className="card">
@@ -115,37 +115,37 @@ export default function Index({priceData}) {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section id="kupit">
-                <div className="container">
-                    <div className="row">
-                        <div className="col">
-                            <h2 className="center form-title wh">Хотите купить бетон?</h2>
-                            <div className="dscr center wh">Оставьте свои контакты и наши специалисты свяжутся с вами.</div>
-                            <form className="form" id="form-1" onSubmit={(e) => sendForm(e)}>
-                                <div className="row-form">
-                                    <div>
-                                        <input type="text"
-                                               className="text-field w-input"
-                                               name="name"
-                                               placeholder="Ваше имя"
-                                               value={topName}
-                                               onChange={(e) => setTopName(e.target.value)}
-                                        />
+                <div className="container-fluid kupit">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <h2 className="center form-title wh">Хотите купить бетон?</h2>
+                                <div className="dscr center wh">Оставьте свои контакты и наши специалисты свяжутся с вами.</div>
+                                <form className="form" id="form-1" onSubmit={(e) => sendForm(e)}>
+                                    <div className="row-form">
+                                        <div>
+                                            <input type="text"
+                                                   className="text-field w-input"
+                                                   name="name"
+                                                   placeholder="Ваше имя"
+                                                   value={topName}
+                                                   onChange={(e) => setTopName(e.target.value)}
+                                            />
+                                        </div>
+                                        <div>
+                                            <InputMask className="phone-input text-field w-input"
+                                                       name="phone"
+                                                       placeholder="Ваш телефон"
+                                                       mask="+7 (999) 999-99-99"
+                                                       required="required"
+                                                       value={topPhone}
+                                                       onChange={(e) => setTopPhone(e.target.value)}
+                                            />
+                                            <button type="submit" className="btn blk form-btn">Заказать звонок</button>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <InputMask className="phone-input text-field w-input"
-                                                   name="phone"
-                                                   placeholder="Ваш телефон"
-                                                   mask="+7 (999) 999-99-99"
-                                                   required="required"
-                                                   value={topPhone}
-                                                   onChange={(e) => setTopPhone(e.target.value)}
-                                        />
-                                        <button type="submit" className="btn blk form-btn">Заказать звонок</button>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,7 +208,7 @@ export default function Index({priceData}) {
                                                                                     </td>
                                                                                     <td>{product.price} ₽</td>
                                                                                     <td className="no-br">
-                                                                                        <ProductCounter/>
+                                                                                        <ProductCounter productData={product}/>
                                                                                     </td>
                                                                                 </tr>
                                                                             )
@@ -284,7 +284,7 @@ export default function Index({priceData}) {
                         <div className="bannerbody-calk">
                             <div>Рассчёт цены бетона с доставкой на карте</div>
                             <Link href="/calculate">
-                                <a><button className="btn wh">Калькулятор доставки</button></a>
+                                <a><button className="btn wh">Рассчёт доставки</button></a>
                             </Link>
                         </div>
                     </div>
@@ -425,10 +425,10 @@ export default function Index({priceData}) {
                         </div>
                         <div className="col-md-8">
                             <div className="row row-cols-partners">
-                                <div className="item-partners d-flex align-items-center justify-content-center"><img src="/images/image7.png" className="img-partners" alt=""/></div>
-                                <div className="item-partners d-flex align-items-center justify-content-center"><img src="/images/image8.png" className="img-partners" alt=""/></div>
-                                <div className="item-partners d-flex align-items-center justify-content-center"><img src="/images/image6.png" className="img-partners" alt=""/></div>
-                                <div className="item-partners d-flex align-items-center justify-content-center"><img src="/images/image9.png" className="img-partners" alt=""/></div>
+                                <div className="item-partners "><img src="/images/image7.png" className="img-partners" alt=""/></div>
+                                <div className="item-partners "><img src="/images/image8.png" className="img-partners" alt=""/></div>
+                                <div className="item-partners "><img src="/images/image6.png" className="img-partners" alt=""/></div>
+                                <div className="item-partners "><img src="/images/image9.png" className="img-partners" alt=""/></div>
 
                             </div>
                         </div>
@@ -455,13 +455,13 @@ export default function Index({priceData}) {
                             </div>
                             <div className="contact-title">Телефоны для связи</div>
                             <div className="contact-row">
-                                <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/><span><a href={`tel:${PHONE_HREF}`}>{PHONE}}</a></span>
+                                <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/><span><a href={`tel:+74996477756`}>+7 (499) 647-77-56</a></span>
                             </div>
                             <div className="contact-title">E-mail по всем вопросам</div>
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="email"/>
                                 <span>
-                                    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                                    <a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a>
                                 </span>
                             </div>
                         </div>

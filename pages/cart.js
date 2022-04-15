@@ -3,7 +3,6 @@ import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
 import React from "react";
 import {decrementQuantity, incrementQuantity, removeAllFromCart, removeFromCart} from "../redux/cart";
-import {EMAIL, PHONE, PHONE_HREF} from "../components/constant";
 
 export default function CartPage() {
     const cart = useSelector((state) => state.cart);
@@ -130,7 +129,7 @@ export default function CartPage() {
                             <div className="contact-row">
                                 <img src="/images/icon/phone.svg" className="img-icon" alt="phone icon"/>
                                 <span>
-                                    <a href={`tel:${PHONE_HREF}`}>{PHONE}</a>
+                                    <a href={`tel:+74996477756`}>+7 (499) 647-77-56</a>
                                 </span>
                             </div>
                             <div className="contact-row">
@@ -141,7 +140,7 @@ export default function CartPage() {
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="message"/>
                                 <span>
-                                    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                                    <a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a>
                                 </span>
                             </div>
                             <div className="contact-row">
@@ -152,7 +151,7 @@ export default function CartPage() {
                     </div>
                     :
                     <div className="container cart">
-                        <img className="cart-big" src="images/icon/Basket_light.svg" alt="bsket"/>
+                        <img className="cart-big" src="/images/icon/Basket_light.svg" alt="bsket"/>
                             <div className="tittle_body_cart">
                                 Ваша корзина пуста
                                 <span>Исправить это просто: выберите в каталоге интересующий товар и нажмите кнопку “В корзину”</span>
@@ -172,7 +171,7 @@ export default function CartPage() {
                                 <div className="contact-row">
                                     <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/>
                                     <span>
-                                        <a href={`tel:${PHONE_HREF}`}>{PHONE}</a>
+                                        <a href={`tel:+74996477756`}>+7 (499) 647-77-56</a>
                                     </span>
                                 </div>
                                 <div className="contact-row">
@@ -184,7 +183,7 @@ export default function CartPage() {
                                 <div className="contact-row">
                                     <img src="/images/icon/Message.svg" className="img-icon" alt="Message"/>
                                     <span>
-                                        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                                        <a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a>
                                     </span>
                                 </div>
                                 <div className="contact-row">
