@@ -167,7 +167,7 @@ export default function CheckoutPage() {
                                             <div className="col-form">
                                                 <span className="label-zakaz">Дата и время доставки</span>
                                                 <InputMask className="text-field w-input br"
-                                                           name="phone"
+                                                           name="date"
                                                            mask="99.99.9999"
                                                            required
                                                            value={phone}
