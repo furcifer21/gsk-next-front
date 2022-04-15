@@ -42,7 +42,7 @@ export default function CartPage() {
                 </div>
             </section>
             <section className="catalog-body">
-                {cart.length !== 0 ?
+                {cart.length > 0 ?
                     <div className="container container-cart">
                         <div className="row cart-row">
                             <div>
@@ -61,7 +61,7 @@ export default function CartPage() {
                             </tr>
                             </thead>
                             <tbody>
-                                {cart.map((product, index) => {
+                                {cart.length > 0 && cart.map((product, index) => {
                                     return (
                                         <tr key={`product-mobile-${index}`}>
                                             <td className="position-relative">
@@ -81,7 +81,7 @@ export default function CartPage() {
                                 })}
                             </tbody>
                         </table>
-                        {cart.map((product, index) => {
+                        {cart.length > 0 && cart.map((product, index) => {
                             return (
                                 <div key={`product-${index}`} className="row cart_produkt">
                                     <div>
