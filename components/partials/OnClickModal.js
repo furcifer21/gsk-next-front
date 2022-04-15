@@ -26,7 +26,7 @@ export default function OnClickModal() {
             calculationCost: [
                 {
                     id,
-                    quantity: 1
+                    amount: 1
                 }
             ]
         };
