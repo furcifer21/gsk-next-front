@@ -170,7 +170,7 @@ export default function CheckoutPage() {
                                                            name="date"
                                                            mask="99.99.9999"
                                                            required
-                                                           value={phone}
+                                                           value={date}
                                                            onChange={(e) => setDate(e.target.value)}
                                                 />
                                             </div>
