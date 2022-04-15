@@ -30,11 +30,11 @@ export default function Index({priceData}) {
     ];
 
     function getItemsCount() {
-        return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+        return cart.length > 0 && cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
     };
 
     function getTotalPrice() {
-        return cart.reduce(
+        return cart.length > 0 && cart.reduce(
             (accumulator, item) => accumulator + item.quantity * item.price, 0
         );
     };

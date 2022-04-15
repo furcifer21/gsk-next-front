@@ -24,7 +24,7 @@ export default function Header() {
     }, [router]); // Will fire only once
 
     function getItemsCount() {
-        return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+        return cart.length > 0 && cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
     };
 
     return (
