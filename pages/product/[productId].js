@@ -11,7 +11,7 @@ export default function ProductPage({productData, categoryMenu}) {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart);
     const currentId = () => {
-        return cart.findIndex((product) => product.id === productData.id);
+        return cart.length > 0 ? cart.findIndex((product) => product.id === productData.id) : -1;
     };
 
     return (

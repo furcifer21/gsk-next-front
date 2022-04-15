@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 export default function ProductCounter({productData}) {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart);
-    const productInCartIndex = cart.findIndex((product) => product.id === productData.id);
+    const productInCartIndex = cart.length > 0 ? cart.findIndex((product) => product.id === productData.id) : -1;
     const [count, setCount] = useState(productInCartIndex !== -1 ? cart[productInCartIndex].quantity : 0);
     function inc() {
         setCount(count + 1);

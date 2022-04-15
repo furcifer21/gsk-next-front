@@ -8,7 +8,7 @@ export default function ProductItem({item, category}) {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart);
     const currentId = () => {
-        return cart.findIndex((product) => product.id === item.id);
+        return cart.length > 0 ? cart.findIndex((product) => product.id === item.id) : -1;
     };
     const [productInCart, seProductInCart] = useState(currentId() !== -1 ? true : false);
 
