@@ -9,6 +9,7 @@ import {API_URL, EMAIL, PHONE, PHONE_HREF, REAL_FAKE_DATA} from "../components/c
 import {checkPhone} from "../components/helpers";
 import {useDispatch, useSelector} from "react-redux";
 import ProductCounter from "../components/partials/ProductCounter";
+import {removeAllFromCart} from "../redux/cart";
 
 export default function Index({priceData}) {
     const [currentCategory, setCurrentCategory] = useState('');
@@ -141,7 +142,7 @@ export default function Index({priceData}) {
                                                        value={topPhone}
                                                        onChange={(e) => setTopPhone(e.target.value)}
                                             />
-                                            <button type="submit" className="btn blk form-btn">Заказать звонок</button>
+                                            <button type="submit" className="btn blk form-btn position-static">Заказать звонок</button>
                                         </div>
                                     </div>
                                 </form>
@@ -251,7 +252,7 @@ export default function Index({priceData}) {
                                                                             </Link>
                                                                             В  корзину
                                                                         </button>
-                                                                        <input type="reset" className="btn  cartblock-btn trash"/>
+                                                                        <input type="reset" className="btn  cartblock-btn trash" onClick={() => dispatch(removeAllFromCart())}/>
                                                                     </div>
                                                                     <button type="button" className="btn org cartblock-btn"
                                                                             data-bs-toggle="modal"

@@ -39,14 +39,14 @@ export const getServerSideProps = async ({ query }) => {
         console.log(e)
     }
 
-    categoryMenu = REAL_FAKE_DATA;
+    /*categoryMenu = REAL_FAKE_DATA;
     REAL_FAKE_DATA.map(category => {
         if(category.typeSlug === categorySlug) {
             categoryData = category;
             subCategoryMenu = category.categories;
             productsData = category.products;
         }
-    });
+    });*/
 
     return {
         props: {

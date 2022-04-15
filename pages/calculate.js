@@ -120,18 +120,75 @@ export default function CalculatePage({catalogCategories}) {
                                             (безналичным платежом или рассчитаться наличными после доставки продукции
                                             на объект).
                                         </p>
-                                        <p>
-                                            Потом отсюда надо взять эту таблицу
-                                        </p>
-                                        <p>
-                                            <img
-                                                border="0"
-                                                width="624"
-                                                height="462"
-                                                src="/images/delivery-2.png"
-                                                alt="Изображение выглядит как стол Автоматически созданное описание"
-                                            />
-                                        </p>
+                                        <table className="delivery-table" style={{color:' #303030', height: '180px', border: '1px solid #c0c0c0'}} border="1" width="624"
+                                               cellSpacing="0" cellPadding="0">
+                                            <tbody>
+                                            <tr style={{backgroundColor: '#f5f5f5'}}>
+                                                <td nowrap="nowrap"><span style={{fontSize: '12pt'}}>&nbsp;
+                                                    <strong>Доставка</strong></span></td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}><strong>Цена с НДС 18% руб/м3</strong></span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr style={{backgroundColor: '#f5f5f5'}}>
+                                                <td nowrap="nowrap"><span style={{fontSize: '12pt'}}>&nbsp;до 10KM</span>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}>370</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap="nowrap"><span style={{fontSize: '12pt'}}>&nbsp;до 15KM</span>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}>410</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap="nowrap"><span style={{fontSize: '12pt'}}>&nbsp;до 20KM</span>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}>450</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap="nowrap"><span style={{fontSize: '12pt'}}>&nbsp;до 25KM</span>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}>495</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap="nowrap"><span style={{fontSize: '12pt'}}>&nbsp;до 30KM</span>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}>540</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap="nowrap"><span style={{fontSize: '12pt'}}>&nbsp;до 35KM</span>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}>590</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap="nowrap"><span style={{fontSize: '12pt'}}>&nbsp;до 40KM</span>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}>640</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap="nowrap"><span
+                                                    style={{fontSize: '12pt'}}>&nbsp;Более 40KM</span></td>
+                                                <td nowrap="nowrap">
+                                                    <p align="center"><span style={{fontSize: '12pt'}}>685</span></p>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                         <p align="center">
                                             <strong></strong>
                                         </p>
@@ -360,12 +417,6 @@ export default function CalculatePage({catalogCategories}) {
                                 <img src="/images/icon/phone.svg" className="img-icon" alt="phone icon"/><span><a href="tel:+74951288380">+7 (495) 128-83-80</a></span>
                             </div>
                             <div className="contact-row">
-                                <button className="btn grey call" data-bs-toggle="modal" data-bs-target="#modal">
-                                    Заказать звонок
-                                </button>
-                            </div>
-
-                            <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="message icon"/><span><a
                                 href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a></span>
                             </div>
@@ -390,7 +441,7 @@ export const getServerSideProps = async () => {
         console.log(e)
     }
 
-    /*let catalogCategories = REAL_FAKE_DATA;*/
+    /*catalogCategories = REAL_FAKE_DATA;*/
 
     return {
         props: {

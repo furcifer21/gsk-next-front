@@ -1,12 +1,17 @@
 import MainLayout from "../components/MainLayout";
 import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {decrementQuantity, incrementQuantity, removeAllFromCart, removeFromCart} from "../redux/cart";
 
 export default function CartPage() {
+    const [cartData, setCartData] = useState([]);
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        setCartData(cart)
+    }, [cart]);
 
     function getItemsCount() {
         return cart.length > 0 && cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
@@ -41,8 +46,8 @@ export default function CartPage() {
                     <hr/>
                 </div>
             </section>
-            <section className="catalog-body">
-                {cart.length > 0 ?
+            {cartData.length > 0 ?
+                <section className="catalog-body">
                     <div className="container container-cart">
                         <div className="row cart-row">
                             <div>
@@ -61,27 +66,27 @@ export default function CartPage() {
                             </tr>
                             </thead>
                             <tbody>
-                                {cart.length > 0 && cart.map((product, index) => {
-                                    return (
-                                        <tr key={`product-mobile-${index}`}>
-                                            <td className="position-relative">
-                                                <Link href={`/product/product-${product.id}`}><a className="fake-link-block"></a></Link>
-                                                {product.name}
-                                            </td>
-                                            <td>{product.price} ₽</td>
-                                            <td className="no-br">
-                                                <div className="number">
-                                                    <div className="number-minus" onClick={() => dispatch(decrementQuantity(product.id))}>−</div>
-                                                    <input className="number-text" type="text" name="count" value={product.quantity} readOnly/>
-                                                    <div className="number-plus" onClick={() => dispatch(incrementQuantity(product.id))}>+</div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    )
-                                })}
+                            {cart.map((product, index) => {
+                                return (
+                                    <tr key={`product-mobile-${index}`}>
+                                        <td className="position-relative">
+                                            <Link href={`/product/product-${product.id}`}><a className="fake-link-block"></a></Link>
+                                            {product.name}
+                                        </td>
+                                        <td>{product.price} ₽</td>
+                                        <td className="no-br">
+                                            <div className="number">
+                                                <div className="number-minus" onClick={() => dispatch(decrementQuantity(product.id))}>−</div>
+                                                <input className="number-text" type="text" name="count" value={product.quantity} readOnly/>
+                                                <div className="number-plus" onClick={() => dispatch(incrementQuantity(product.id))}>+</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
                             </tbody>
                         </table>
-                        {cart.length > 0 && cart.map((product, index) => {
+                        {cart.map((product, index) => {
                             return (
                                 <div key={`product-${index}`} className="row cart_produkt">
                                     <div>
@@ -103,39 +108,29 @@ export default function CartPage() {
                                 </div>
                             )
                         })}
-                        <div className="itog">
+                        <form className="itog">
                             <div className="row cart-row ">
                                 <div>
-                                    <div className="cart_item-row br bg-wh justify-content-end">
-                                        {/*<input type="text" className="cart_item text-field br"
-                                           placeholder="Введите промокод на скидку"/>*/}
+                                    <div className="cart_item-row br bg-wh">
                                         <div className="cart_item-row-itog">ИТОГО:<span>{getTotalPrice()} ₽</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div className="row cart-row-bottom">
-                                <div>
-                                    <button type="button" className="btn grey" data-bs-toggle="modal" data-bs-target="#modal">
-                                        Заказать звонок
-                                    </button>
+                                <div className="justify-content-end">
                                     <button className="btn org complete position-relative">
                                         <Link href="/checkout"><a className="fake-link-block"></a></Link>
                                         Оформить заказ
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                         <div className="contact-cart">
                             <div className="contact-row">
                                 <img src="/images/icon/phone.svg" className="img-icon" alt="phone icon"/>
                                 <span>
                                     <a href={`tel:+74996477756`}>+7 (499) 647-77-56</a>
                                 </span>
-                            </div>
-                            <div className="contact-row">
-                                <button className="btn grey call" data-bs-toggle="modal" data-bs-target="#modal">
-                                    Заказать звонок
-                                </button>
                             </div>
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="message"/>
@@ -149,51 +144,46 @@ export default function CartPage() {
                             </div>
                         </div>
                     </div>
-                    :
-                    <div className="container cart">
-                        <img className="cart-big" src="/images/icon/Basket_light.svg" alt="bsket"/>
-                            <div className="tittle_body_cart">
-                                Ваша корзина пуста
-                                <span>Исправить это просто: выберите в каталоге интересующий товар и нажмите кнопку “В корзину”</span>
+                </section>
+            :
+                <section className="catalog-body">
+                    <div className="container container container-cart">
+                        <div className="text-center">
+                            <img className="cart-big" src="/images/icon/basket_light.svg" alt="bsket"/>
+                        </div>
+                        <div className="tittle_body_cart">
+                            Ваша корзина пуста
+                            <span className="mx-auto">Исправить это просто: выберите в каталоге интересующий товар и нажмите кнопку “В корзину”</span>
+                        </div>
+                        <div className="row cart-row-bottom">
+                            <div className="justify-content-center">
+                                <button className="btn org position-relative">
+                                    <Link href="/catalog"><a className="fake-link-block"></a></Link>
+                                    Перейти в каталог
+                                </button>
                             </div>
-                            <div className="row cart-row-bottom">
-                                <div>
-                                    <button className="btn grey call" data-bs-toggle="modal" data-bs-target="#modal">
-                                        Заказать звонок
-                                    </button>
-                                    <button className="btn org position-relative">
-                                        <Link href="/catalog"><a className="fake-link-block"></a></Link>
-                                        Перейти в каталог
-                                    </button>
-                                </div>
+                        </div>
+                        <div className="contact-cart">
+                            <div className="contact-row">
+                                <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/>
+                                <span>
+                                    <a href={`tel:+74996477756`}>+7 (499) 647-77-56</a>
+                                </span>
                             </div>
-                            <div className="contact-cart">
-                                <div className="contact-row">
-                                    <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/>
-                                    <span>
-                                        <a href={`tel:+74996477756`}>+7 (499) 647-77-56</a>
-                                    </span>
-                                </div>
-                                <div className="contact-row">
-                                    <button className="btn grey call" data-bs-toggle="modal" data-bs-target="#modal">
-                                        Заказать звонок
-                                    </button>
-                                </div>
-
-                                <div className="contact-row">
-                                    <img src="/images/icon/Message.svg" className="img-icon" alt="Message"/>
-                                    <span>
-                                        <a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a>
-                                    </span>
-                                </div>
-                                <div className="contact-row">
-                                    <img src="/images/icon/map.svg" className="img-icon" alt="map"/>
-                                    <span className="adr">Пресненская наб., 8, стр. 1, Москва, Россия</span>
-                                </div>
+                            <div className="contact-row">
+                                <img src="/images/icon/message.svg" className="img-icon" alt="Message"/>
+                                <span>
+                                    <a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a>
+                                </span>
                             </div>
+                            <div className="contact-row">
+                                <img src="/images/icon/map.svg" className="img-icon" alt="map"/>
+                                <span className="adr">Пресненская наб., 8, стр. 1, Москва, Россия</span>
+                            </div>
+                        </div>
                     </div>
-                }
-            </section>
+                </section>
+            }
         </MainLayout>
     )
 }

@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "./partials/Header";
 import OnClickModal from "./partials/OnClickModal";
 import {SuccessModal} from "./partials/SuccessModal";
+import MobileCartBtn from "./partials/MobileCartBtn";
 
 export default function MainLayout({children, seo}) {
     return (
@@ -20,6 +21,7 @@ export default function MainLayout({children, seo}) {
                 <main className="flex-grow-1">
                     {children}
                 </main>
+                <MobileCartBtn/>
                 <OnClickModal/>
                 <SuccessModal/>
             </div>

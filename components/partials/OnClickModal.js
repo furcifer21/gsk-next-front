@@ -1,20 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import InputMask from "react-input-mask";
 import $ from "jquery";
 import axios from "axios";
 import {API_URL} from "../constant";
+import {useDispatch, useSelector} from "react-redux";
+import {removeAllFromCart} from "../../redux/cart";
 
 export default function OnClickModal() {
     const [modalName, setModalName] = useState('');
     const [modalPhone, setModalPhone] = useState('');
     const [modalEmail, setModalEmail] = useState('');
     const [agreeCheckbox, setAgreeCheckbox] = useState(true);
-
-    let id;
-    if (typeof window !== "undefined") {
-        const list = window.location.pathname.split('-');
-        id = Number(list[list.length - 1]);
-    }
+    const cart = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
 
     function sendForm(e) {
         e.preventDefault();
@@ -23,18 +21,20 @@ export default function OnClickModal() {
             name: modalName.trim(),
             phone: modalPhone.trim(),
             email: emailVal,
-            calculationCost: [
-                {
-                    id,
-                    amount: 1
+            calculationCost: cart.map((item) => {
+                return {
+                    id: item.id,
+                    amount: item.quantity
                 }
-            ]
+            })
         };
 
         if(agreeCheckbox && (emailVal !== '')) {
             axios.post(`${API_URL}/email-sender/sendBasketOrder`, formData)
                 .then(res => {
-                    $('#success-modal').addClass('open-modal');
+                    $('#success-modal').addClass('open-modal after-on-click-modal');
+                    $('#modal').removeClass('show').css('display', 'none');
+                    dispatch(removeAllFromCart());
                 })
                 .catch(error => {
                     console.log(error);
@@ -57,25 +57,26 @@ export default function OnClickModal() {
                                    data-name="Имя"
                                    name="name"
                                    maxLength="256"
-                                   placeholder="Имя"
+                                   placeholder="Имя*"
                                    type="text"
                                    value={modalName}
+                                   required="required"
                                    onChange={(e) => setModalName(e.target.value)}
                             />
                             <InputMask className="phone-input text-field w-input"
                                        name="phone"
-                                       placeholder="Телефон"
+                                       placeholder="Телефон*"
                                        mask="+7 (999) 999-99-99"
                                        value={modalPhone}
+                                       required="required"
                                        onChange={(e) => setModalPhone(e.target.value)}
                             />
                             <input className="text-field w-input"
                                    name="email"
                                    maxLength="256"
-                                   placeholder="E-mail*"
+                                   placeholder="E-mail"
                                    type="email"
                                    value={modalEmail}
-                                   required="required"
                                    onChange={(e) => setModalEmail(e.target.value)}
                             />
                             <input type="checkbox"

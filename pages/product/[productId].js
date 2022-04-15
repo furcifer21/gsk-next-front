@@ -6,6 +6,7 @@ import CategoryMenu from "../../components/partials/CategoryMenu";
 import {addToCart} from "../../redux/cart";
 import {useDispatch, useSelector} from "react-redux";
 import React from "react";
+import ProductCounter from "../../components/partials/ProductCounter";
 
 export default function ProductPage({productData, categoryMenu}) {
     const dispatch = useDispatch();
@@ -60,12 +61,7 @@ export default function ProductPage({productData, categoryMenu}) {
                                             <div className="product_item-row br bg-wh">
                                                 <div className="product_item-row-name">{productData.name}</div>
                                                 <div className="product_item-row-price">{productData.price} ₽/м3</div>
-                                                {/*<div className="number" data-step="1" data-min="1" data-max="100">
-                                                <a href="#" className="number-minus">−</a><input className="number-text"
-                                                                                                 type="text" name="count"
-                                                                                                 value="0"/>
-                                                <a href="#" className="number-plus">+</a>
-                                            </div>*/}
+                                                <ProductCounter productData={productData}/>
                                                 <div className="price">{productData.price} ₽</div>
                                             </div>
                                         </div>
@@ -86,7 +82,8 @@ export default function ProductPage({productData, categoryMenu}) {
                                             <span></span>
                                         </div>*/}
                                         </div>
-                                        <div className="prod_row">
+                                        <div className="prod_row align-items-end">
+                                            <ProductCounter productData={productData}/>
                                             {currentId() ?
                                                 <button className="btn in_cart" onClick={() => dispatch(addToCart(productData))}>
                                                     В корзину
@@ -94,7 +91,7 @@ export default function ProductPage({productData, categoryMenu}) {
                                                 :
                                                 <button className="btn org cartblock-btn lgx mt-4 position-relative">
                                                     <Link href="/checkout"><a className="fake-link-block"></a></Link>
-                                                    Товар в корзине
+                                                    В корзину
                                                 </button>
                                             }
                                         </div>

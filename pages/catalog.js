@@ -90,8 +90,7 @@ export const getServerSideProps = async () => {
     } catch (e) {
         console.log(e)
     }
-/*
-    let catalogCategories = REAL_FAKE_DATA;*/
+    /*catalogCategories = REAL_FAKE_DATA;*/
 
     return {
         props: {

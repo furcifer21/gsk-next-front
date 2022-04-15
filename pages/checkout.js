@@ -8,8 +8,10 @@ import {API_URL} from "../components/constant";
 import InputMask from "react-input-mask";
 import {removeAllFromCart} from "../redux/cart";
 import $ from "jquery";
+import {useRouter} from "next/router";
 
 export default function CheckoutPage() {
+    const router = useRouter();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -52,8 +54,8 @@ export default function CheckoutPage() {
 
         axios.post(`${API_URL}/email-sender/sendFullOrder`, formData)
             .then(res => {
-                $('#success-modal').addClass('open-modal');
                 dispatch(removeAllFromCart());
+                router.push('/thanks', '', {});
             })
             .catch(error => {
                 console.log(error);
@@ -173,7 +175,7 @@ export default function CheckoutPage() {
                                                 <span className="label-zakaz">Дата и время доставки</span>
                                                 <InputMask className="text-field w-input br"
                                                            name="date"
-                                                           mask="99.99.9999"
+                                                           mask="Дата: 99.99.9999 Время: 99:99"
                                                            required
                                                            value={date}
                                                            onChange={(e) => setDate(e.target.value)}

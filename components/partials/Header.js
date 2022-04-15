@@ -24,7 +24,7 @@ export default function Header() {
     }, [router]); // Will fire only once
 
     function getItemsCount() {
-        return cart.length > 0 && cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+        return cart.length > 0 ? cart.reduce((accumulator, item) => accumulator + item.quantity, 0) : 0;
     };
 
     return (
@@ -73,13 +73,9 @@ export default function Header() {
                             <img src="/images/icon/phone.svg" className="img-icon" alt=""/>
                             <span><a href={`tel:+74996477756`}>+7 (499) 647-77-56</a></span>
                         </div>
+
                         <div className="contact-row">
-                            <button className="btn grey call" data-bs-toggle="modal" data-bs-target="#modal">
-                                Заказать звонок
-                            </button>
-                        </div>
-                        <div className="contact-row">
-                            <img src="/images/icon/Message.svg" className="img-icon" alt=""/>
+                            <img src="/images/icon/message.svg" className="img-icon" alt=""/>
                             <span><a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a></span>
                         </div>
                         <div className="contact-row">
