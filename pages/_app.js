@@ -6,8 +6,7 @@ if (typeof window !== 'undefined') {
     require("@popperjs/core");
     require("bootstrap");
 }
-import 'bootstrap/dist/css/bootstrap.css'
-import '../resources/css/style.css';
+import "../resources/sass/app.scss";
 
 const App = ({ Component, pageProps }) => {
     return(

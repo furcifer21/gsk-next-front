@@ -1,7 +1,7 @@
 import MainLayout from "../components/MainLayout";
 import axios from "axios";
 import Link from "next/link";
-import {API_URL, REAL_FAKE_DATA} from "../components/constant";
+import {API_URL, EMAIL, PHONE, PHONE_HREF, REAL_FAKE_DATA} from "../components/constant";
 import CategoryMenu from "../components/partials/CategoryMenu";
 
 export default function CalculatePage({catalogCategories}) {
@@ -59,7 +59,7 @@ export default function CalculatePage({catalogCategories}) {
                                         <div className="row-form col-2">
                                             <button type="submit" className="btn org  main-btn form-btn">Рассчитать</button>
                                             <span className="txt-calk"> Все рассчеты представлены в ознакомительных целях. Для точного рассчёта рекомендуем связаться с нашими специалистами по телефону <br/><a
-                                                href="tel:+74993777770"><b>+7 (499) 377-77-70</b></a></span>
+                                                href={`tel:${PHONE_HREF}`}><b>{PHONE}</b></a></span>
                                         </div>
                                     </form>
                                     <hr/>
@@ -106,7 +106,7 @@ export default function CalculatePage({catalogCategories}) {
 
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="message icon"/><span><a
-                                href="mailto:novikov@gmail.com">novikov@gmail.com</a></span>
+                                href={`mailto:${EMAIL}`}>{EMAIL}</a></span>
                             </div>
                             <div className="contact-row">
                                 <img src="/images/icon/map.svg" className="img-icon" alt=""/><span className="adr">125438, Москва, ул. Автомоторная 5, стр.3</span>
@@ -121,16 +121,15 @@ export default function CalculatePage({catalogCategories}) {
 }
 
 export const getServerSideProps = async () => {
-    /*let catalogCategories = [];
-*/
-    /*try {
+    let catalogCategories = [];
+    try {
         const res = await axios.get(`${API_URL}/product/getAllProduct`);
         catalogCategories = res.data;
     } catch (e) {
         console.log(e)
-    }*/
+    }
 
-    let catalogCategories = REAL_FAKE_DATA;
+    /*let catalogCategories = REAL_FAKE_DATA;*/
 
     return {
         props: {

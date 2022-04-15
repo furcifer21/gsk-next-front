@@ -3,6 +3,7 @@ import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
 import React from "react";
 import {decrementQuantity, incrementQuantity, removeAllFromCart, removeFromCart} from "../redux/cart";
+import {EMAIL, PHONE, PHONE_HREF} from "../components/constant";
 
 export default function CartPage() {
     const cart = useSelector((state) => state.cart);
@@ -129,7 +130,7 @@ export default function CartPage() {
                             <div className="contact-row">
                                 <img src="/images/icon/phone.svg" className="img-icon" alt="phone icon"/>
                                 <span>
-                                    <a href="tel:+74993777770">+7 (499) 377-77-70</a>
+                                    <a href={`tel:${PHONE_HREF}`}>{PHONE}</a>
                                 </span>
                             </div>
                             <div className="contact-row">
@@ -140,7 +141,7 @@ export default function CartPage() {
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="message"/>
                                 <span>
-                                    <a href="mailto:info@glavsk.ru">info@glavsk.ru</a>
+                                    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                                 </span>
                             </div>
                             <div className="contact-row">
@@ -171,7 +172,7 @@ export default function CartPage() {
                                 <div className="contact-row">
                                     <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/>
                                     <span>
-                                        <a href="tel:+74993777770">+7 (499) 377-77-70</a>
+                                        <a href={`tel:${PHONE_HREF}`}>{PHONE}</a>
                                     </span>
                                 </div>
                                 <div className="contact-row">
@@ -183,7 +184,7 @@ export default function CartPage() {
                                 <div className="contact-row">
                                     <img src="/images/icon/Message.svg" className="img-icon" alt="Message"/>
                                     <span>
-                                        <a href="mailto:info@glavsk.ru">info@glavsk.ru</a>
+                                        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                                     </span>
                                 </div>
                                 <div className="contact-row">

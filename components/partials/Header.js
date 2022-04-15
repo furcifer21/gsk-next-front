@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {useSelector} from "react-redux";
+import {EMAIL, PHONE, PHONE_HREF} from "../constant";
 
 export default function Header() {
     const router = useRouter();
@@ -71,7 +72,7 @@ export default function Header() {
                     <div className="contact-cart">
                         <div className="contact-row">
                             <img src="/images/icon/phone.svg" className="img-icon" alt=""/>
-                            <span><a href="tel:+74993777770">+7 (499) 377-77-70 </a></span>
+                            <span><a href={`tel:${PHONE_HREF}`}>{PHONE}</a></span>
                         </div>
                         <div className="contact-row">
                             <button className="btn grey call" data-bs-toggle="modal" data-bs-target="#modal">
@@ -80,7 +81,7 @@ export default function Header() {
                         </div>
                         <div className="contact-row">
                             <img src="/images/icon/Message.svg" className="img-icon" alt=""/>
-                            <span><a href="mailto:info@glavsk.ru">info@glavsk.ru</a></span>
+                            <span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></span>
                         </div>
                         <div className="contact-row">
                             <img src="/images/icon/map.svg" className="img-icon" alt=""/>
@@ -141,10 +142,10 @@ export default function Header() {
                             </a>
                         </Link>
                         <div className="d-flex align-items-center">
-                            <a href="tel:+74993777770" className="header-phone d-flex align-items-center justify-content-center">
+                            <a href={`tel:${PHONE_HREF}`} className="header-phone d-flex align-items-center justify-content-center">
                                 <img src="/images/icon/phone.svg" width="24" alt="phone"/>
                             </a>
-                            <a href="tel:+74993777770" className="d-none d-lg-inline text-decoration-none" style={{color: "#18191F", marginLeft: "4px", fontWeight: 500}}>+7(499)3777770 </a>
+                            <a href={`tel:${PHONE_HREF}`} className="d-none d-lg-inline text-decoration-none" style={{color: "#18191F", marginLeft: "4px", fontWeight: 500}}>{PHONE}</a>
                             <Link href="/cart">
                                 <a className="d-flex align-items-center basket position-relative">
                                     <span className="position-absolute d-flex align-items-center justify-content-center">{getItemsCount()}</span>

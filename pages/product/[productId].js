@@ -195,7 +195,7 @@ export const getServerSideProps = async ({ query }) => {
     ]
 
     try {
-        const res = await axios.get(`${API_URL}/product/getAllProducts`);
+        const res = await axios.get(`${API_URL}/product/getAllProduct`);
         categoryMenu = res.data;
     } catch (e) {
         console.log(e)

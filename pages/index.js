@@ -5,7 +5,7 @@ import {Map, Placemark, YMaps} from "react-yandex-maps";
 import axios from "axios";
 import $ from "jquery";
 import InputMask from "react-input-mask";
-import {API_URL, REAL_FAKE_DATA} from "../components/constant";
+import {API_URL, EMAIL, PHONE, PHONE_HREF, REAL_FAKE_DATA} from "../components/constant";
 import {checkPhone} from "../components/helpers";
 import {useDispatch, useSelector} from "react-redux";
 import ProductCounter from "../components/partials/ProductCounter";
@@ -455,13 +455,13 @@ export default function Index({priceData}) {
                             </div>
                             <div className="contact-title">Телефоны для связи</div>
                             <div className="contact-row">
-                                <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/><span><a href="tel:+74993777770">+7 (499) 377-77-70</a></span>
+                                <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/><span><a href={`tel:${PHONE_HREF}`}>{PHONE}}</a></span>
                             </div>
                             <div className="contact-title">E-mail по всем вопросам</div>
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="email"/>
                                 <span>
-                                    <a href="mailto:info@glavsk.ru">info@glavsk.ru</a>
+                                    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                                 </span>
                             </div>
                         </div>
