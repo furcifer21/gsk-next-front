@@ -10,6 +10,9 @@ export default function OnClickModal() {
     const [modalEmail, setModalEmail] = useState('');
     const [agreeCheckbox, setAgreeCheckbox] = useState(true);
 
+    const list = window.location.split('-');
+    const id = Number(list[list.length - 1]);
+
     function sendForm(e) {
         e.preventDefault();
         const emailVal = modalEmail.trim();
@@ -17,12 +20,10 @@ export default function OnClickModal() {
             name: modalName.trim(),
             phone: modalPhone.trim(),
             email: emailVal,
-            products: JSON.parse(localStorage.getItem('gskCart')).map((item) => {
-                return {
-                    amount: item.quantity,
-                    id: item.id
-                }
-            })
+            products: [
+                id,
+                quantity: 1
+            ]
         };
 
         if(agreeCheckbox && (emailVal !== '')) {
