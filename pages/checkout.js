@@ -42,7 +42,7 @@ export default function CheckoutPage() {
             typeClient: typeClient.trim(),
             typePayment: typePayment.trim(),
             distance: distance,
-            products: cart,
+            calculationCost: cart,
         }
 
         axios.post(`${API_URL}/email-sender/sendFullOrder`, formData)
@@ -171,7 +171,7 @@ export default function CheckoutPage() {
                                                            mask="99.99.9999"
                                                            required
                                                            value={phone}
-                                                           onChange={(e) => setPhone(e.target.value)}
+                                                           onChange={(e) => setDate(e.target.value)}
                                                 />
                                             </div>
                                             <div className="col-form">
