@@ -30,13 +30,13 @@ export default function Index({priceData}) {
     ];
 
     function getItemsCount() {
-        return cart.length > 0 && cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+        return cart.length > 0 ? cart.reduce((accumulator, item) => accumulator + item.quantity, 0) : 0;
     };
 
     function getTotalPrice() {
-        return cart.length > 0 && cart.reduce(
+        return cart.length > 0 ? cart.reduce(
             (accumulator, item) => accumulator + item.quantity * item.price, 0
-        );
+        ) : 0;
     };
 
     function sendForm(e) {
@@ -497,7 +497,7 @@ export const getServerSideProps = async () => {
         console.log(e)
     }
 
-    /*let priceData = REAL_FAKE_DATA;*/
+    /*priceData = REAL_FAKE_DATA;*/
 
     return {
         props: {
