@@ -17,7 +17,12 @@ export default function OnClickModal() {
             name: modalName.trim(),
             phone: modalPhone.trim(),
             email: emailVal,
-            products: [{name: 'productName', amount: 1}]
+            products: JSON.parse(localStorage.getItem('gskCart')).map((item) => {
+                return {
+                    amount: item.quantity,
+                    id: item.id
+                }
+            })
         };
 
         if(agreeCheckbox && (emailVal !== '')) {
