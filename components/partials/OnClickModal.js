@@ -21,8 +21,10 @@ export default function OnClickModal() {
             phone: modalPhone.trim(),
             email: emailVal,
             products: [
-                id,
-                quantity: 1
+                {
+                    id,
+                    quantity: 1
+                }
             ]
         };
 
