@@ -10,8 +10,11 @@ export default function OnClickModal() {
     const [modalEmail, setModalEmail] = useState('');
     const [agreeCheckbox, setAgreeCheckbox] = useState(true);
 
-    const list = window.location.split('-');
-    const id = Number(list[list.length - 1]);
+    let id;
+    if (typeof window !== "undefined") {
+        const list = window.location.split('-');
+        id = Number(list[list.length - 1]);
+    }
 
     function sendForm(e) {
         e.preventDefault();
