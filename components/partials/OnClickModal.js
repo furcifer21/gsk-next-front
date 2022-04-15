@@ -12,7 +12,7 @@ export default function OnClickModal() {
 
     let id;
     if (typeof window !== "undefined") {
-        const list = window.location.split('-');
+        const list = window.location.pathname.split('-');
         id = Number(list[list.length - 1]);
     }
 
