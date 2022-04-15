@@ -23,7 +23,7 @@ export default function OnClickModal() {
             name: modalName.trim(),
             phone: modalPhone.trim(),
             email: emailVal,
-            products: [
+            calculationCost: [
                 {
                     id,
                     quantity: 1
