@@ -1616,7 +1616,7 @@ form.search select {
   min-height: 107px;
 }
 
-.row-form div:nth-child(1) .w-input {
+.row-form div:nth-child(1) .w-input:nth-child(1) {
   margin-right: 37px;
 }
 
@@ -3360,7 +3360,7 @@ input[type="radio"]:checked+label:after {
   }
 
   .cart_item-row-clean:after {
-    content: "ÃÅ¾Ã‘â€¡ÃÂ¸Ã‘ÂÃ‘â€šÃÂ¸Ã‘â€šÃ‘Å’ ÃÂºÃÂ¾ÃÂ·ÃÂ¸ÃÂ½Ã‘Æ’";
+    content: "Очистить козину";
     font-weight: 400;
     font-size: 25px;
     line-height: 30px;
@@ -4431,4 +4431,45 @@ input::-webkit-inner-spin-button {
 
 .open-modal .modal-content {
   box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 55%);
+}
+
+.delivery-table {
+  width: 100%;
+
+  td {
+    border: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  tr td, tbody tr th {
+    border-bottom: 1px solid #c0c0c0;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #c0c0c0;
+  }
+
+ tr:nth-child(even) td, tbody tr:nth-child(even) th {
+   background-color: #f3f3f3;
+ }
+}
+
+.mobile-cart-block {
+  bottom: 0;
+  padding: 10px 0;
+  background: #ffad00;
+  z-index: 100;
+  box-shadow: 2px -5px 19px -8px rgb(0 0 0 / 75%);
+
+  .btn {
+    padding: 15px 20px;
+  }
+
+  .price-mobile div {
+    &:last-child {
+      font-size: 21px;
+      font-weight: 500;
+    }
+  }
 }
