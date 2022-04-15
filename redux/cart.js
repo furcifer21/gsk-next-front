@@ -31,6 +31,7 @@ const cart = createSlice({
     },
     removeAllFromCart: (state, action) => {
       state.length = 0;
+      localStorage.removeItem('gskCart');
     },
   },
 });
