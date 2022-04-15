@@ -45,7 +45,7 @@ export default function CheckoutPage() {
             products: cart,
         }
 
-        axios.post(`${API_URL}/email-sender/sendOrderFull`, formData)
+        axios.post(`${API_URL}/email-sender/sendFullOrder`, formData)
             .then(res => {
                 $('#success-modal').addClass('open-modal');
                 dispatch(removeAllFromCart());
