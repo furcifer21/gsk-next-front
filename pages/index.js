@@ -129,6 +129,7 @@ export default function Index({priceData}) {
                                                    className="text-field w-input"
                                                    name="name"
                                                    placeholder="Ваше имя"
+                                                   required="required"
                                                    value={topName}
                                                    onChange={(e) => setTopName(e.target.value)}
                                             />
@@ -207,7 +208,7 @@ export default function Index({priceData}) {
                                                                                         </Link>
                                                                                         {product.name}
                                                                                     </td>
-                                                                                    <td>{product.price} ₽</td>
+                                                                                    <td style={{whiteSpace: 'nowrap'}}>{product.price} ₽</td>
                                                                                     <td className="no-br">
                                                                                         <ProductCounter productData={product}/>
                                                                                     </td>

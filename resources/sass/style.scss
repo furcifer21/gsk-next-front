@@ -4422,6 +4422,10 @@ input::-webkit-inner-spin-button {
 
 .App {
   overflow-x: hidden;
+
+  @media (max-width: breakpoint-max(lg)) {
+    padding-bottom: 80px;
+  }
 }
 
 .open-modal {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import InputMask from "react-input-mask";
 import $ from "jquery";
 import axios from "axios";
@@ -10,7 +10,11 @@ import {useRouter} from "next/router";
 export default function MobileCartBtn() {
     const router = useRouter();
     const cart = useSelector((state) => state.cart);
-    const CartsPages = (router.pathname === '/cart' || router.pathname === '/checkout')
+    const [isCartFull, setIsCartFull] = useState(false);
+
+    useEffect(() => {
+        setIsCartFull(cart.length > 0);
+    }, [cart]);
 
     function getTotalPrice() {
         return cart.length > 0 && cart.reduce(
@@ -19,7 +23,7 @@ export default function MobileCartBtn() {
     };
 
     return (
-        <div className={`mobile-cart-block position-fixed w-100 ${!CartsPages && cart.length > 0 ? 'd-lg-none' : 'd-none'}`}>
+        <div className={`mobile-cart-block position-fixed w-100 ${router.pathname === '/' && isCartFull ? 'd-lg-none' : 'd-none'}`}>
             <div className="container">
                 <div className="d-flex justify-content-between align-items-center">
                     <div className="price-mobile">
