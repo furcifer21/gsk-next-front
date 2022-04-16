@@ -90,7 +90,7 @@ export default function ProductPage({productData, categoryMenu}) {
                                                     В корзину
                                                 </button>
                                                 :
-                                                <button className="btn org cartblock-btn lgx mt-4 position-relative">
+                                                <button className="btn in_cart position-relative">
                                                     <Link href="/cart"><a className="fake-link-block"></a></Link>
                                                     В корзину
                                                 </button>
@@ -156,21 +156,21 @@ export default function ProductPage({productData, categoryMenu}) {
                                     </div>
                                     {currentId() !== -1 ?
                                         <>
-                                            <button className="btn org cartblock-btn lg mt-4 position-relative" onClick={() => dispatch(addToCart(productData))}>
+                                            <button className="btn org cartblock-btn lg mt-4 position-relative w-50 d-block mx-auto" onClick={() => dispatch(addToCart(productData))}>
                                                 <Link href="/cart"><a className="fake-link-block"></a></Link>
-                                                В корзину
+                                                Оформить заказ
                                             </button>
-                                            <button className="btn org cartblock-btn lg mt-3" onClick={() => dispatch(addToCart(productData))} data-bs-toggle="modal" data-bs-target="#modal">
+                                            <button className="btn org cartblock-btn lg mt-3 w-50 d-block mx-auto" onClick={() => dispatch(addToCart(productData))} data-bs-toggle="modal" data-bs-target="#modal">
                                                 Купить в один клик
                                             </button>
                                         </>
                                         :
                                         <>
-                                            <button className="btn org cartblock-btn lg mt-4 position-relative" onClick={() => dispatch(addToCart(productData))}>
+                                            <button className="btn org cartblock-btn lg mt-4 position-relative w-50 d-block mx-auto" onClick={() => dispatch(addToCart(productData))}>
                                                 <Link href="/cart"><a className="fake-link-block"></a></Link>
-                                                В корзину
+                                                Оформить заказ
                                             </button>
-                                            <button className="btn org cartblock-btn lg mt-3 position-relative" data-bs-toggle="modal" data-bs-target="#modal">
+                                            <button className="btn org cartblock-btn lg mt-3 position-relative w-50 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modal">
                                                 Купить в один клик
                                             </button>
                                         </>
@@ -222,7 +222,7 @@ export const getServerSideProps = async ({ query }) => {
         console.log(e)
     }
 
-    /*productData = fakeProductData[0];
+   /* productData = fakeProductData[0];
     categoryMenu = REAL_FAKE_DATA;*/
 
     return {

@@ -118,7 +118,7 @@ export default function ArticlePage() {
                                             <label htmlFor="cb1">
                                                 Я согласен на <a href="#">обработку персональных данных</a>
                                             </label>
-                                            <button type="submit" className="btn org main-btn form-btn" >
+                                            <button type="submit" className="btn org main-btn form-btn position-relative" >
                                                 Отправить письмо
                                             </button>
                                         </div>
