@@ -85,7 +85,7 @@ export default function ProductPage({productData, categoryMenu}) {
                                         <div className="prod_row align-items-end">
                                             <ProductCounter productData={productData}/>
                                             {currentId() !== -1 ?
-                                                <button className="btn in_cart" onClick={() => dispatch(addToCart(productData))}>
+                                                <button className="btn in_cart position-relative" onClick={() => dispatch(addToCart(productData))}>
                                                     <Link href="/cart"><a className="fake-link-block"></a></Link>
                                                     В корзину
                                                 </button>
