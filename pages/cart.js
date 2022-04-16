@@ -111,7 +111,7 @@ export default function CartPage() {
                         <form className="itog">
                             <div className="row cart-row ">
                                 <div>
-                                    <div className="cart_item-row br bg-wh">
+                                    <div className="cart_item-row br bg-wh justify-content-end">
                                         <div className="cart_item-row-itog">ИТОГО:<span>{getTotalPrice()} ₽</span></div>
                                     </div>
                                 </div>
