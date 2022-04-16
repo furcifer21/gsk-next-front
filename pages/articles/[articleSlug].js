@@ -58,9 +58,11 @@ export default function ArticlePage() {
             </section>
             <section className="catalog-body">
                 <div className="container">
-                    <div className="text-center mt-4">
-                        <img className="logo-article" src="/images/logo2.svg" alt="logo" height="80"/>
-                    </div>
+                    {router.asPath === '/articles/about-company' &&
+                        <div className="text-center mt-4">
+                            <img className="logo-article" src="/images/logo2.svg" alt="logo" height="80"/>
+                        </div>
+                    }
                     <div className="row justify-content-between">
                         {/*<div className="col-sidbar-left">
                             <div className="sidbar-left-name">

@@ -360,6 +360,7 @@ export default function CalculatePage({catalogCategories}) {
                                             изгиб и равномерном удлинении.
                                         </p>
                                     </div>
+                                    <h3>Расчитать стоимость заявки</h3>
                                     <form className="form" id="form-3" onSubmit={(e) => sendForm(e)}>
                                         <div className="row-form">
                                             <span className="label-calk">Адрес доставки:</span>
