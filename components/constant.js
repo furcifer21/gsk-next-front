@@ -54,7 +54,7 @@ export const REAL_FAKE_DATA = [
         ],
         "products": [
             {
-                "id": 3,
+                "id": 1,
                 "name": "Бетон М100 B7,5 F100 W4 (Гравий)",
                 "price": 3300,
                 "contents": {
@@ -70,7 +70,7 @@ export const REAL_FAKE_DATA = [
                 "description": ""
             },
             {
-                "id": 4,
+                "id": 2,
                 "name": "Бетон М150 B12,5 F100 W4 (Гравий)",
                 "price": 3300,
                 "contents": {
