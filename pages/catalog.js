@@ -89,6 +89,9 @@ export const getServerSideProps = async () => {
         catalogCategories = res.data;
     } catch (e) {
         console.log(e)
+        return {
+            notFound: true,
+        }
     }
     /*catalogCategories = REAL_FAKE_DATA;*/
 

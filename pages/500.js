@@ -6,7 +6,7 @@ export default function Custom500() {
         <MainLayout seo={{title: 'GSK Ошибка сервера', description: ''}}>
             <div className="d-flex align-items-center justify-content-center mt-5">
                 <div className="text-center mt-5">
-                    <h1 className="mb-3">500 - Ошибка сервера</h1>
+                    <h1 className="mw-100 mb-3">500 - Ошибка сервера</h1>
                     <p>Попробуйте позже</p>
                 </div>
             </div>
