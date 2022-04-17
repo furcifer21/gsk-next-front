@@ -29,7 +29,7 @@ export default function OnClickModal() {
             })
         };
 
-        if(agreeCheckbox && (emailVal !== '')) {
+        if(agreeCheckbox) {
             axios.post(`${API_URL}/email-sender/sendBasketOrder`, formData)
                 .then(res => {
                     $('#success-modal').addClass('open-modal after-on-click-modal');
