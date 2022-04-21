@@ -2,11 +2,16 @@ import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {useSelector} from "react-redux";
+import {managers} from "../../managers";
 
 export default function Header() {
     const router = useRouter();
     const [mobileMenu, setMobileMenu] =useState(false)
     const cart = useSelector((state) => state.cart);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const managerId = urlParams.get('rf');
+    const manager = managers[managerId] ?? managers.mgr3;
 
     useEffect(() => {
         const mobileMenuHide = () => {
@@ -71,12 +76,12 @@ export default function Header() {
                     <div className="contact-cart">
                         <div className="contact-row">
                             <img src="/images/icon/phone.svg" className="img-icon" alt=""/>
-                            <span><a href={`tel:+74996477756`}>+7 (499) 647-77-56</a></span>
+                            <span><a href={`tel:${manager.phone}`}>{manager.phone}</a></span>
                         </div>
 
                         <div className="contact-row">
                             <img src="/images/icon/message.svg" className="img-icon" alt=""/>
-                            <span><a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a></span>
+                            <span><a href={`mailto:${manager.email}`}>{manager.email}</a></span>
                         </div>
                         <div className="contact-row">
                             <img src="/images/icon/map.svg" className="img-icon" alt=""/>
@@ -137,10 +142,10 @@ export default function Header() {
                             </a>
                         </Link>
                         <div className="d-flex align-items-center">
-                            <a href={`tel:+74996477756`} className="header-phone d-flex align-items-center justify-content-center">
+                            <a href={`tel:${manager.phone}`} className="header-phone d-flex align-items-center justify-content-center">
                                 <img src="/images/icon/phone.svg" width="24" alt="phone"/>
                             </a>
-                            <a href={`tel:+74996477756`} className="d-none d-lg-inline text-decoration-none" style={{color: "#18191F", marginLeft: "4px", fontWeight: 500}}>+7 (499) 647-77-56</a>
+                            <a href={`tel:${manager.phone}`} className="d-none d-lg-inline text-decoration-none" style={{color: "#18191F", marginLeft: "4px", fontWeight: 500}}>{manager.phone}</a>
                             <Link href="/cart">
                                 <a className="d-flex align-items-center basket position-relative">
                                     <span className="position-absolute d-flex align-items-center justify-content-center">{getItemsCount()}</span>

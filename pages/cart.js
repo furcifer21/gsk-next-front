@@ -172,13 +172,13 @@ export default function CartPage() {
                             <div className="contact-row">
                                 <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/>
                                 <span>
-                                    <a href={`tel:+74996477756`}>+7 (499) 647-77-56</a>
+                                    <a href={`tel:${manager.phone}`}>{manager.phone}</a>
                                 </span>
                             </div>
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="Message"/>
                                 <span>
-                                    <a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a>
+                                    <a href={`mailto:${manager.email}`}>{manager.email}</a>
                                 </span>
                             </div>
                             <div className="contact-row">
