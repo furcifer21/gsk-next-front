@@ -10,7 +10,7 @@ export default function CartPage() {
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
-    const urlParams = new URLSearchParams(window?.location?.search ?? '/?rf=mgr3');
+    const urlParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '/?rf=mgr3');
     const managerId = urlParams.get('rf');
     const manager = managers[managerId] ?? managers.mgr3;
 
