@@ -20,6 +20,7 @@ export default function ArticlePage() {
             name: nameInput.trim(),
             email: emailInput.trim(),
             question: textInput.trim(),
+            manager: localStorage.getItem('manager') ?? 'mgr3'
         }
 
         if(agreeCheckbox && (emailInput.trim() !== '')) {

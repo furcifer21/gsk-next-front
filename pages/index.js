@@ -55,6 +55,7 @@ export default function Index({priceData}) {
         const formData = {
             name: topName.trim(),
             phone: phoneVal,
+            manager: localStorage.getItem('manager') ?? 'mgr3'
         };
 
         if(checkPhone(phoneVal) || (phoneVal !== '')) {

@@ -21,6 +21,7 @@ export default function OnClickModal() {
             name: modalName.trim(),
             phone: modalPhone.trim(),
             email: emailVal,
+            manager: localStorage.getItem('manager') ?? 'mgr3',
             calculationCost: cart.map((item) => {
                 return {
                     id: item.id,
