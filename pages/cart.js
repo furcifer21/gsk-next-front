@@ -3,11 +3,16 @@ import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
 import {decrementQuantity, incrementQuantity, removeAllFromCart, removeFromCart} from "../redux/cart";
+import {managers} from "../managers";
 
 export default function CartPage() {
     const [cartData, setCartData] = useState([]);
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const managerId = urlParams.get('rf');
+    const manager = managers[managerId] ?? managers.mgr3;
 
     useEffect(() => {
         setCartData(cart)
@@ -129,13 +134,13 @@ export default function CartPage() {
                             <div className="contact-row">
                                 <img src="/images/icon/phone.svg" className="img-icon" alt="phone icon"/>
                                 <span>
-                                    <a href={`tel:+74996477756`}>+7 (499) 647-77-56</a>
+                                    <a href={`tel:${manager.phone}`}>{manager.phone}</a>
                                 </span>
                             </div>
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="message"/>
                                 <span>
-                                    <a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a>
+                                    <a href={`mailto:${manager.email}`}>{manager.email}</a>
                                 </span>
                             </div>
                             <div className="contact-row">

@@ -10,6 +10,7 @@ import {checkPhone} from "../components/helpers";
 import {useDispatch, useSelector} from "react-redux";
 import ProductCounter from "../components/partials/ProductCounter";
 import {removeAllFromCart} from "../redux/cart";
+import {managers} from "../managers";
 
 export default function Index({priceData}) {
     const [currentCategory, setCurrentCategory] = useState('');
@@ -29,6 +30,10 @@ export default function Index({priceData}) {
             slug: 'marki-betona',
         }
     ];
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const managerId = urlParams.get('rf');
+    const manager = managers[managerId] ?? managers.mgr3;
 
     function getItemsCount() {
         return cart.length > 0 ? cart.reduce((accumulator, item) => accumulator + item.quantity, 0) : 0;
@@ -457,13 +462,13 @@ export default function Index({priceData}) {
                             </div>
                             <div className="contact-title">Телефоны для связи</div>
                             <div className="contact-row">
-                                <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/><span><a href={`tel:+74996477756`}>+7 (499) 647-77-56</a></span>
+                                <img src="/images/icon/phone.svg" className="img-icon" alt="phone"/><span><a href={`tel:${manager.phone}`}>{manager.phone}</a></span>
                             </div>
                             <div className="contact-title">E-mail по всем вопросам</div>
                             <div className="contact-row">
                                 <img src="/images/icon/message.svg" className="img-icon" alt="email"/>
                                 <span>
-                                    <a href={`mailto:info@glavsk.ru`}>info@glavsk.ru</a>
+                                    <a href={`mailto:info@glavsk.ru`}>{manager.email}</a>
                                 </span>
                             </div>
                         </div>
