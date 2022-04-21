@@ -10,11 +10,12 @@ export default function Header() {
     const cart = useSelector((state) => state.cart);
 
     const urlParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '/?rf=mgr3');
-    const managerId = localStorage.getItem('manager') ?? urlParams.get('rf');
+    const ls = typeof localStorage !== 'undefined' ? localStorage : undefined;
+    const managerId = ls?.getItem('manager') ?? urlParams.get('rf');
     const manager = managers[managerId] ?? managers.mgr3;
 
-    if (!localStorage.getItem('manager')) {
-        localStorage.setItem('manager', managerId);
+    if (!ls?.getItem('manager')) {
+        ls?.setItem('manager', managerId);
     }
 
     useEffect(() => {

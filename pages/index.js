@@ -32,11 +32,12 @@ export default function Index({priceData}) {
     ];
 
     const urlParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '/?rf=mgr3');
-    const managerId = localStorage.getItem('manager') ?? urlParams.get('rf');
+    const ls = typeof localStorage !== 'undefined' ? localStorage : undefined;
+    const managerId = ls?.getItem('manager') ?? urlParams.get('rf');
     const manager = managers[managerId] ?? managers.mgr3;
 
-    if (!localStorage.getItem('manager')) {
-        localStorage.setItem('manager', managerId);
+    if (!ls?.getItem('manager')) {
+        ls?.setItem('manager', managerId);
     }
 
     function getItemsCount() {
@@ -55,7 +56,7 @@ export default function Index({priceData}) {
         const formData = {
             name: topName.trim(),
             phone: phoneVal,
-            manager: localStorage.getItem('manager') ?? 'mgr3'
+            manager: ls?.getItem('manager') ?? 'mgr3'
         };
 
         if(checkPhone(phoneVal) || (phoneVal !== '')) {

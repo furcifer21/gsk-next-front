@@ -13,6 +13,7 @@ export default function OnClickModal() {
     const [agreeCheckbox, setAgreeCheckbox] = useState(true);
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+    const ls = typeof localStorage !== 'undefined' ? localStorage : undefined;
 
     function sendForm(e) {
         e.preventDefault();
@@ -21,7 +22,7 @@ export default function OnClickModal() {
             name: modalName.trim(),
             phone: modalPhone.trim(),
             email: emailVal,
-            manager: localStorage.getItem('manager') ?? 'mgr3',
+            manager: ls?.getItem('manager') ?? 'mgr3',
             calculationCost: cart.map((item) => {
                 return {
                     id: item.id,

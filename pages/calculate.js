@@ -13,6 +13,7 @@ export default function CalculatePage({catalogCategories}) {
     const [volume, setVolume] = useState('');
     const [phone, setPhone] = useState('');
 
+
     function sendForm(e) {
         e.preventDefault();
 
