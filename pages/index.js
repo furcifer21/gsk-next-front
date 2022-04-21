@@ -31,7 +31,7 @@ export default function Index({priceData}) {
         }
     ];
 
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window?.location?.search ?? '/?rf=mgr3');
     const managerId = urlParams.get('rf');
     const manager = managers[managerId] ?? managers.mgr3;
 

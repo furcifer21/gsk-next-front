@@ -9,7 +9,7 @@ export default function Header() {
     const [mobileMenu, setMobileMenu] =useState(false)
     const cart = useSelector((state) => state.cart);
 
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window?.location?.search ?? '/?rf=mgr3');
     const managerId = urlParams.get('rf');
     const manager = managers[managerId] ?? managers.mgr3;
 
