@@ -32,8 +32,12 @@ export default function Index({priceData}) {
     ];
 
     const urlParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '/?rf=mgr3');
-    const managerId = urlParams.get('rf');
+    const managerId = localStorage.getItem('manager') ?? urlParams.get('rf');
     const manager = managers[managerId] ?? managers.mgr3;
+
+    if (!localStorage.getItem('manager')) {
+        localStorage.setItem('manager', managerId);
+    }
 
     function getItemsCount() {
         return cart.length > 0 ? cart.reduce((accumulator, item) => accumulator + item.quantity, 0) : 0;

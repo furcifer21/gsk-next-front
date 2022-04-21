@@ -10,8 +10,12 @@ export default function Header() {
     const cart = useSelector((state) => state.cart);
 
     const urlParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '/?rf=mgr3');
-    const managerId = urlParams.get('rf');
+    const managerId = localStorage.getItem('manager') ?? urlParams.get('rf');
     const manager = managers[managerId] ?? managers.mgr3;
+
+    if (!localStorage.getItem('manager')) {
+        localStorage.setItem('manager', managerId);
+    }
 
     useEffect(() => {
         const mobileMenuHide = () => {
