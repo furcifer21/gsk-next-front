@@ -31,10 +31,10 @@ export default function Index({priceData}) {
         }
     ];
 
-    const urlParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '/?rf=mgr3');
+    const urlParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '/?_rf=service');
     const ls = typeof localStorage !== 'undefined' ? localStorage : undefined;
     const managerId = ls?.getItem('manager') ?? urlParams.get('rf');
-    const manager = managers[managerId] ?? managers.mgr3;
+    const manager = managers[managerId] ?? managers.service;
 
     if (!ls?.getItem('manager')) {
         ls?.setItem('manager', managerId);
@@ -56,7 +56,7 @@ export default function Index({priceData}) {
         const formData = {
             name: topName.trim(),
             phone: phoneVal,
-            manager: ls?.getItem('manager') ?? 'mgr3'
+            manager: ls?.getItem('manager') ?? 'service'
         };
 
         if(checkPhone(phoneVal) || (phoneVal !== '')) {

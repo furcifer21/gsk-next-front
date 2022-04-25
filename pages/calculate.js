@@ -22,7 +22,7 @@ export default function CalculatePage({catalogCategories}) {
             mark: mark.trim(),
             volume: volume.trim(),
             phone: phone.trim(),
-            manager: localStorage.getItem('manager') ?? 'mgr3'
+            manager: localStorage.getItem('manager') ?? 'service'
         };$('#success-modal').addClass('open-modal');
 
         axios.post(`${API_URL}/email-sender/sendCalculationRequest`, formData)

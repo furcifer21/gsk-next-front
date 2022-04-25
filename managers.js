@@ -14,5 +14,9 @@ export const managers = {
     mgr3: {
         phone: '+7 (964) 578-14-83',
         email: 'info@glavsk.ru'
+    },
+    service: {
+        phone: '+7 (499) 647-77-56',
+        email: 'sale@glavsk.ru'
     }
 }

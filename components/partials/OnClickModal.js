@@ -22,7 +22,7 @@ export default function OnClickModal() {
             name: modalName.trim(),
             phone: modalPhone.trim(),
             email: emailVal,
-            manager: ls?.getItem('manager') ?? 'mgr3',
+            manager: ls?.getItem('manager') ?? 'service',
             calculationCost: cart.map((item) => {
                 return {
                     id: item.id,

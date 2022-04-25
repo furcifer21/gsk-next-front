@@ -34,7 +34,7 @@ export default function CheckoutPage() {
     function sendOrder(e) {
         e.preventDefault();
         const formData = {
-            manager: localStorage.getItem('manager') ?? 'mgr3',
+            manager: localStorage.getItem('manager') ?? 'service',
             name: name.trim(),
             email: email.trim(),
             phone: phone.trim(),
